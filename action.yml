@@ -1,0 +1,15 @@
+name: 'create-json-env'
+description: 'Create file Json Contain env with Yaml'
+inputs:
+  file-name:
+    description: 'The name of the file to be written'
+    required: true
+outputs:
+  full-path:
+    description: 'The full path to the written file'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'book-open'  
+  color: 'yellow'

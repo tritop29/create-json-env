@@ -1,0 +1,12 @@
+{
+  "name": "create-json-env",
+  "version": "1.0.0",
+  "description": "Create file Json Contain env with Yaml",
+  "main": "index.js",
+  "author": "Tomas Coeli",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  }
+}
