@@ -13,7 +13,7 @@ const start =  async () => {
 
   Object.keys(process.env).forEach(function(key) {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
-      if(key === 'NAME' || key === 'TYPE'){
+      if(key === 'INPUT_NAME' || key === 'INPUT_TYPE') {
         console.log('PRUEBA DE METODO')
         console.log(process.env[key])
         console.log(typeof process.env[key])
