@@ -14,9 +14,13 @@ const start =  async () => {
   Object.keys(process.env).forEach(function(key) {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
       if(key === 'NAME' || key === 'TYPE'){
-        obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
+        console.log('PRUEBA DE METODO')
+        console.log(process.env[key])
+        console.log(typeof process.env[key])
+        console.log('------------')
+        // obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       } else {
-        obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
+        // obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       }
     }
   })
