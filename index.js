@@ -13,7 +13,9 @@ const start =  async () => {
 
   Object.keys(process.env).forEach(function(key) {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
-      obj[key.substring(inputPrefix.length)] = process.env[key]
+      obj['DEV'][key.substring(inputPrefix.length)] = process.env[key]
+      obj['QA'][key.substring(inputPrefix.length)] = process.env[key]
+      obj['PRODUCTION'][key.substring(inputPrefix.length)] = process.env[key]
     }
   })
 
