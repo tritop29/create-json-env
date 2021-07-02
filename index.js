@@ -14,7 +14,7 @@ const start =  async () => {
   Object.keys(process.env).forEach(function(key) {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
       if(key === 'NAME' || key === 'TYPE'){
-        obj['SERVER']['QA'][key.substring(inputPrefix.length)] = process.env[key]
+        obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       } else {
         obj['SERVER']['QA'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       }
