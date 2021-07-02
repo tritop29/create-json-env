@@ -9,7 +9,7 @@ const start =  async () => {
   const path = require("path")
   const fullPath = path.join(process.env.GITHUB_WORKSPACE, fileName)
 
-  var obj = {}
+  var obj = {DEV: {}, QA: {}, PRODUCTION: {}}
 
   Object.keys(process.env).forEach(function(key) {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
@@ -18,6 +18,8 @@ const start =  async () => {
       obj['PRODUCTION'][key.substring(inputPrefix.length)] = process.env[key]
     }
   })
+
+  console.log(JSON.stringify(obj))
 
   await fs.writeFile(fullPath, obj, function (error) {
     if (error) core.setFailed(error.message)
