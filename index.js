@@ -9,15 +9,16 @@ const start =  async () => {
   const path = require("path")
   const fullPath = path.join(process.env.GITHUB_WORKSPACE, fileName)
 
-  var obj = { SERVER: {} }
+  let op
+  var obj = { QA: {} }
 
   Object.keys(process.env).forEach( (key) => {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
 
       if(key === 'INPUT_NAME' || key === 'INPUT_TYPE') {
-        obj['SERVER'][key.substring(inputPrefix.length)] = process.env[key]
+        obj['QA']['SERVER'][key.substring(inputPrefix.length)] = process.env[key]
       } else {
-        obj['SERVER'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
+        obj['QA']['SERVER'][key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       }
     }
   })
