@@ -22,9 +22,7 @@ const start =  async () => {
     }
   })
 
-  console.log(JSON.stringify(obj))
-
-  await fs.writeFile(fullPath, obj, function (error) {
+  await fs.writeFile(fullPath, JSON.stringify(obj), 'utf-8', (error) => {
     if (error) core.setFailed(error.message)
     console.log(`Successfully written file ${fullPath} `)
     core.setOutput("full-path", fullPath)
