@@ -9,3 +9,9 @@ Thumbs.db
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+# Workspaces
+*.code-workspace
+
+# Dependencies
+*.lock
