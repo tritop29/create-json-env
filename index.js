@@ -17,6 +17,9 @@ const start =  async () => {
       if(key === 'INPUT_NAME' || key === 'INPUT_TYPE') {
         obj.QA.SERVER[key.substring(inputPrefix.length)] = process.env[key]
       } else {
+        console.log('Process')
+        console.log(process.env[key])
+        consoel.log('----')
         obj.QA.SERVER[key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       }
     }
