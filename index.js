@@ -19,7 +19,7 @@ const start =  async () => {
       } else {
         console.log('Process')
         console.log(process.env[key])
-        consoele.log('----')
+        console.log('----')
         obj.QA.SERVER[key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
       }
     }
