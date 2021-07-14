@@ -17,12 +17,7 @@ const start =  async () => {
       if(key === 'INPUT_NAME' || key === 'INPUT_TYPE') {
         obj.QA.SERVER[key.substring(inputPrefix.length)] = process.env[key]
       } else {
-        console.log('Process')
-        console.log(typeof process.env[key])
-        console.log(process.env[key])
-        console.log(JSON.parse(process.env[key]))
-        console.log('----')
-        obj.QA.SERVER[key.substring(inputPrefix.length)] = JSON.parse(process.env[key])
+        obj.QA.SERVER[key.substring(inputPrefix.length)] = JSON.parse(process.env[key].replace(/(?:\r\n|\r|\n)/g, ''))
       }
     }
   })
