@@ -6,6 +6,7 @@ const start =  async () => {
 
   const fileName = core.getInput('file-name')
   const type = core.getInput('type')
+  const name = core.getInput('name')
   const inputPrefix = "INPUT_"
   const path = require("path")
   const fullPath = path.join(process.env.GITHUB_WORKSPACE, fileName)
@@ -16,9 +17,9 @@ const start =  async () => {
     if(key.startsWith(inputPrefix) && key != "INPUT_FILE-NAME") {
 
       if(key === 'INPUT_NAME' || key === 'INPUT_TYPE') {
-        obj[type].SERVER[key.substring(inputPrefix.length)] = process.env[key]
+        obj[type][name][key.substring(inputPrefix.length)] = process.env[key]
       } else {
-        obj[type].SERVER[key.substring(inputPrefix.length)] = JSON.parse(process.env[key].replace(/(?:\r\n|\r|\n)/g, ''))
+        obj[type][name][key.substring(inputPrefix.length)] = JSON.parse(process.env[key].replace(/(?:\r\n|\r|\n)/g, ''))
       }
     }
   })
